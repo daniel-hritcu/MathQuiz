@@ -1,3 +1,48 @@
 <resources>
-    <string name="app_name">Daniel Hritcu - MathQuiz</string>
+    <!--    Titles-->
+    <string name="app_name">MathQuiz</string>
+    <string name="quiz_view_title">Math Quiz</string>
+    <string name="results_view_title">Results</string>
+
+    <!--    Quiz design time elements-->
+    <string name="default_question">0 + 0</string>
+
+    <string name="et_answer_hint">Answer</string>
+    <!--    Quiz keypad-->
+    <string name="numeric1">1</string>
+    <string name="numeric2">2</string>
+    <string name="numeric3">3</string>
+    <string name="numeric4">4</string>
+    <string name="numeric5">5</string>
+    <string name="numeric6">6</string>
+    <string name="numeric7">7</string>
+    <string name="numeric8">8</string>
+    <string name="numeric9">9</string>
+    <string name="numeric0">0</string>
+    <string name="numeric_dot">.</string>
+    <string name="numeric_minus">-</string>
+    <string name="generate_btn">generate</string>
+    <string name="validate_btn">validate</string>
+    <string name="clear_btn">clear</string>
+    <string name="score_btn">score</string>
+    <string name="finish_btn">finish</string>
+
+    <!--    Score elements-->
+    <string name="score_tv_title">Your Results and Score</string>
+    <string name="rb_all">All</string>
+    <string name="rb_right">Right</string>
+    <string name="rb_wrong">Wrong</string>
+    <string name="rb_sort_a">Sort A</string>
+    <string name="rb_sort_d">Sort D</string>
+    <string name="tv_name">Name:</string>
+    <string name="et_name_hint">Player Name</string>
+    <string name="tv_score">Score:</string>
+    <string name="default_score">55%</string>
+    <string name="btn_show">Show</string>
+    <string name="btn_back">Back</string>
+    <string name="results_icon">results_icon</string>
+    <string name="thumbs_up_down">Thumbs up down</string>
+    <string name="question_label">Question:</string>
+    <string name="answer_label">Answer:</string>
+    <string name="solution_label">Solution:</string>
 </resources>

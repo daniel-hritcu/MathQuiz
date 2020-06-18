@@ -7,4 +7,198 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.Quiz">
+        <item name="colorControlNormal">#FE3D81</item>
+        <item name="colorControlActivated">#FE3D81</item>
+        <item name="colorControlHighlight">#FE3D81</item>
+    </style>
+
+    <style name="AppTheme.Score">
+        <item name="colorControlNormal">#8A8A8A</item>
+        <item name="colorControlActivated">#8A8A8A</item>
+        <item name="colorControlHighlight">#8A8A8A</item>
+    </style>
+
+    <!--    Button-->
+    <style name="AppTheme.StandardButton" parent="AppTheme">
+        <item name="backgroundTint">@color/btn_bg_selector</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:clickable">true</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="AppTheme.StandardButton.MediumTextSize" parent="AppTheme.StandardButton">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="AppTheme.StandardButton.AutoTextSize" parent="AppTheme.StandardButton">
+        <item name="android:autoSizeTextType">uniform</item>
+    </style>
+
+    <style name="ResultsTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#122CC1</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ResultsRadioGroup">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_below">@+id/tv_title</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginHorizontal">10dp</item>
+    </style>
+
+    <style name="ResultsRadioButton">
+        <item name="android:buttonTint">#434343</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="ListView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingVertical">2dp</item>
+        <item name="android:background">#19000000</item>
+    </style>
+
+    <style name="ResultsLinearLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingHorizontal">8dp</item>
+        <item name="android:layout_marginHorizontal">10dp</item>
+    </style>
+
+    <style name="ResultsLinearLayout2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingHorizontal">8dp</item>
+        <item name="android:layout_marginHorizontal">10dp</item>
+    </style>
+
+    <style name="AppTheme.StandardButton.ResultsButtons">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:layout_marginHorizontal">10dp</item>
+    </style>
+
+    <style name="ResultsNameLabel">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">#727272</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">bottom</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+
+    <style name="PlayerNameInput">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColorHint">@android:color/darker_gray</item>
+        <item name="android:inputType">textPersonName</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="QuizMainLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@android:color/black</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingHorizontal">20dp</item>
+        <item name="android:paddingVertical">10dp</item>
+    </style>
+
+    <style name="QuizTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:background">#A2E9E7</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="QuizAnswerLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">#BFEEFB</item>
+        <item name="android:paddingVertical">10dp</item>
+    </style>
+
+    <style name="QuizAnswer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ems">10</item>
+        <item name="android:inputType">numberSigned|numberDecimal</item>
+        <item name="android:paddingHorizontal">5dp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textColorHint">@android:color/darker_gray</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="QuizQuestion">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingVertical">32dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="QuizKeyPadLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="ResultsItemLabel">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">@android:color/darker_gray</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="ResultsItemValueLabel">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:autoSizeTextType">uniform</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="ResultsItemLinearLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="ResultsItemMainLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingVertical">10dp</item>
+        <item name="android:background">@drawable/bg_result_list_item</item>
+    </style>
+
+
 </resources>

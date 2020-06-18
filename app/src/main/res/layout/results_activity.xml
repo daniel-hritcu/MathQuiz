@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.ResultsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FAFAFA"
+        android:paddingVertical="10dp">
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/ResultsTitle"
+            android:text="@string/score_tv_title" />
+
+        <RadioGroup
+            android:id="@+id/rg_filter"
+            style="@style/ResultsRadioGroup">
+
+            <RadioButton
+                style="@style/ResultsRadioButton"
+                android:text="@string/rb_all" />
+
+            <RadioButton
+                style="@style/ResultsRadioButton"
+                android:text="@string/rb_right" />
+
+            <RadioButton
+                style="@style/ResultsRadioButton"
+                android:text="@string/rb_wrong" />
+
+            <RadioButton
+                style="@style/ResultsRadioButton"
+                android:text="@string/rb_sort_a" />
+
+            <RadioButton
+                style="@style/ResultsRadioButton"
+                android:text="@string/rb_sort_d" />
+        </RadioGroup>
+
+        <ListView
+            android:id="@+id/results_list"
+            style="@style/ListView"
+            android:layout_above="@id/ll_name"
+            android:layout_below="@+id/rg_filter"
+            tools:listitem="@layout/result_list_item" />
+
+        <LinearLayout
+            android:id="@+id/ll_name"
+            style="@style/ResultsLinearLayout"
+            android:layout_above="@+id/ll_score"
+            android:weightSum="100">
+
+            <TextView
+                style="@style/ResultsNameLabel"
+                android:layout_weight="20"
+                android:text="@string/tv_name" />
+
+            <EditText
+                style="@style/PlayerNameInput"
+                android:layout_weight="80"
+                android:importantForAutofill="no"
+                android:hint="@string/et_name_hint" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_score"
+            style="@style/ResultsLinearLayout2"
+            android:layout_above="@id/btn_show"
+            android:weightSum="100">
+
+            <TextView
+                style="@style/ResultsNameLabel"
+                android:layout_weight="20"
+                android:text="@string/tv_score" />
+
+            <TextView
+                style="@style/ResultsNameLabel"
+                android:layout_weight="80"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_show"
+            style="@style/AppTheme.StandardButton.ResultsButtons"
+            android:layout_above="@+id/btn_back"
+            android:text="@string/btn_show" />
+
+        <Button
+            android:id="@+id/btn_back"
+            style="@style/AppTheme.StandardButton.ResultsButtons"
+            android:layout_alignParentBottom="true"
+            android:text="@string/btn_back" />
+    </RelativeLayout>
+</layout>

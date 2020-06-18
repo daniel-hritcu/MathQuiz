@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout style="@style/ResultsItemMainLayout">
+
+        <LinearLayout style="@style/ResultsItemLinearLayout">
+
+            <TextView
+                style="@style/ResultsItemLabel"
+                android:text="@string/question_label" />
+
+            <TextView
+                style="@style/ResultsItemLabel"
+                android:text="@string/answer_label" />
+
+            <TextView
+                style="@style/ResultsItemLabel"
+                android:text="@string/solution_label" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/ResultsItemLinearLayout">
+
+            <TextView style="@style/ResultsItemValueLabel" />
+
+            <TextView style="@style/ResultsItemValueLabel" />
+
+            <TextView style="@style/ResultsItemValueLabel" />
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>
