@@ -19,7 +19,7 @@
 
         <TextView
             style="@style/QuizTitle"
-            android:text='@{activity.getActivityTitle()}' />
+            android:text='@{gameState.playerName != "" ? activity.getActivityTitle() : "Math Quiz"}' />
 
         <LinearLayout style="@style/QuizAnswerLayout">
 
@@ -28,6 +28,7 @@
                 style="@style/QuizAnswer"
                 android:importantForAutofill="no"
                 android:hint="@string/et_answer_hint"
+                android:enabled="@{!gameState.quiz.answered}"
                 android:text="@={gameState.quiz.answer}"
                 android:imeOptions="actionDone"
                 />

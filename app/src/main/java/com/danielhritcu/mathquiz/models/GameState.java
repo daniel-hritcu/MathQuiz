@@ -1,6 +1,7 @@
 package com.danielhritcu.mathquiz.models;
 
 import android.annotation.SuppressLint;
+import android.util.Log;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
@@ -23,6 +24,7 @@ public class GameState extends BaseObservable {
         generateNextQuiz();
         getNewQuiz();
         mResults = new Results();
+        mPlayerName = "";
     }
 
     public void getNewQuiz() {
@@ -37,6 +39,7 @@ public class GameState extends BaseObservable {
 
     @Bindable
     public Quiz getQuiz() {
+        Log.println(Log.ASSERT, "SOLUTION: ", mQuiz.getSolution());
         return mQuiz;
     }
 
@@ -61,8 +64,8 @@ public class GameState extends BaseObservable {
 
     @SuppressLint("DefaultLocale")
     public String getPlayerScore() {
-        int score = (mPlayerRightAnswers / mPlayerQuizCount) * 100;
-        return score + "%";
+        double score = (double) mPlayerRightAnswers * 100 / (double) mPlayerQuizCount;
+        return (int) score + "%";
     }
 
     public void addQuizToResults() {
@@ -78,7 +81,7 @@ public class GameState extends BaseObservable {
 
     @SuppressLint("DefaultLocale")
     private void generateNextQuiz(){
-        int MAX_NUMBER = 25;
+        int MAX_NUMBER = 20;
         int firstNumber, secondNumber;
         String question;
         double solution;
@@ -119,7 +122,6 @@ public class GameState extends BaseObservable {
                 solution = firstNumber + secondNumber;
                 break;
         }
-
 
         if(secondNumber < 0){
             questionFormat = "%d  %c  (%d)";

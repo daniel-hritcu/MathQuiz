@@ -1,10 +1,8 @@
 package com.danielhritcu.mathquiz.ui;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
@@ -14,14 +12,12 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 
 import com.danielhritcu.mathquiz.QuizApp;
 import com.danielhritcu.mathquiz.databinding.QuizActivityBinding;
 import com.danielhritcu.mathquiz.models.GameState;
 import com.danielhritcu.mathquiz.R;
-import com.danielhritcu.mathquiz.BR;
 
 import es.dmoral.toasty.Toasty;
 
@@ -40,8 +36,6 @@ public class QuizActivity extends AppCompatActivity {
 
         mBinding.setGameState(mGameState);
         mBinding.setActivity(this);
-
-
     }
 
     public void setTextEditActionListener(){
@@ -50,7 +44,6 @@ public class QuizActivity extends AppCompatActivity {
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 if(etAnswer.getText().toString().isEmpty()){
                     Toasty.info(this, "Answer can not be empty!", Toast.LENGTH_SHORT, true).show();
-
                     //do not hide the keyboard
                     return true;
                 }
@@ -64,15 +57,9 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     public String getActivityTitle(){
-        if(mGameState.getPlayerName() == null ||
-                mGameState.getPlayerName().isEmpty()){
-
-            return getString(R.string.quiz_view_title);
-        } else {
             return String.format("%s %s",
                     mGameState.getPlayerName(),
                     mGameState.getPlayerScore());
-        }
     }
 
     public void onKeyPadClick(View view, char key){

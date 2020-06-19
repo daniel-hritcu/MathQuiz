@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="quiz"
+            type="com.danielhritcu.mathquiz.models.Quiz" />
+    </data>
 
-    <LinearLayout style="@style/ResultsItemMainLayout">
+    <LinearLayout
+        style="@style/ResultsItemMainLayout">
 
         <LinearLayout style="@style/ResultsItemLinearLayout">
 
@@ -20,11 +26,18 @@
 
         <LinearLayout style="@style/ResultsItemLinearLayout">
 
-            <TextView style="@style/ResultsItemValueLabel" />
+            <TextView
+                style="@style/ResultsItemValueLabel"
+                android:text="@{quiz.question}"/>
 
-            <TextView style="@style/ResultsItemValueLabel" />
+            <TextView
+                style="@style/ResultsItemValueLabel"
+                android:text="@{quiz.answer}"/>
 
-            <TextView style="@style/ResultsItemValueLabel" />
+            <TextView
+                style="@style/ResultsItemValueLabel"
+                android:text="@{quiz.solution}"/>
+
         </LinearLayout>
     </LinearLayout>
 
