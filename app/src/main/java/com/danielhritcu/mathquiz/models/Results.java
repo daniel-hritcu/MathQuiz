@@ -5,9 +5,10 @@ import androidx.databinding.Bindable;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import com.danielhritcu.mathquiz.BR;
 
 public class Results extends BaseObservable {
     private List<Quiz> mResults = new ArrayList<>();
@@ -22,7 +23,6 @@ public class Results extends BaseObservable {
         mResults.add(quiz);
     }
 
-    @Bindable
     public List<Quiz> getResultsList(){
         if(showRightResults){
             mResultsList = getRight();
@@ -43,16 +43,14 @@ public class Results extends BaseObservable {
         return mResultsList;
     }
 
-    public void setResultsList(List<Quiz> resultsList){
-        mResultsList = resultsList;
-    }
-
+    @Bindable
     public boolean isShowAllResults() {
         return showAllResults;
     }
 
     public void setShowAllResults(boolean showAllResults) {
         this.showAllResults = showAllResults;
+        notifyPropertyChanged(BR.showAllResults);
     }
 
     @Bindable
@@ -62,6 +60,7 @@ public class Results extends BaseObservable {
 
     public void setShowRightResults(boolean showRightResults) {
         this.showRightResults = showRightResults;
+        notifyPropertyChanged(BR.showRightResults);
     }
 
     @Bindable
@@ -71,6 +70,7 @@ public class Results extends BaseObservable {
 
     public void setShowWrongResults(boolean showWrongResults) {
         this.showWrongResults = showWrongResults;
+        notifyPropertyChanged(BR.showWrongResults);
     }
 
     @Bindable
@@ -80,6 +80,7 @@ public class Results extends BaseObservable {
 
     public void setShowSortedAscendingResults(boolean showSortedAscendingResults) {
         this.showSortedAscendingResults = showSortedAscendingResults;
+        notifyPropertyChanged(BR.showSortedAscendingResults);
     }
 
     @Bindable
@@ -89,7 +90,7 @@ public class Results extends BaseObservable {
 
     public void setShowSortedDescendingResults(boolean showSortedDescendingResults) {
         this.showSortedDescendingResults = showSortedDescendingResults;
-
+        notifyPropertyChanged(BR.showSortedDescendingResults);
     }
 
     private List<Quiz> getRight(){

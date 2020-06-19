@@ -2,37 +2,59 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.Quiz.QuizView">
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="gameState"
+            type="com.danielhritcu.mathquiz.models.GameState" />
+
+        <variable
+            name="activity"
+            type="com.danielhritcu.mathquiz.ui.QuizActivity" />
+    </data>
 
     <LinearLayout style="@style/QuizMainLayout">
 
         <TextView
             style="@style/QuizTitle"
-            android:text="@string/quiz_view_title" />
+            android:text='@{activity.getActivityTitle()}' />
 
         <LinearLayout style="@style/QuizAnswerLayout">
 
             <EditText
+                android:id="@+id/et_answer"
                 style="@style/QuizAnswer"
                 android:importantForAutofill="no"
-                android:hint="@string/et_answer_hint" />
+                android:hint="@string/et_answer_hint"
+                android:text="@={gameState.quiz.answer}"
+                android:imeOptions="actionDone"
+                />
 
         </LinearLayout>
 
         <TextView
             style="@style/QuizQuestion"
-            android:text="@string/default_question" />
+            android:text="@{gameState.quiz.question}" />
 
         <LinearLayout style="@style/QuizKeyPadLayout">
 
             <Button
+                android:onClick="@{(view) -> activity.onKeyPadClick(view, '1')}"
+                android:enabled="@{!gameState.quiz.answered}"
                 style="@style/AppTheme.StandardButton"
                 android:text="@string/numeric1" />
 
             <Button
+                android:onClick="@{(view) -> activity.onKeyPadClick(view, '2')}"
+                android:enabled="@{!gameState.quiz.answered}"
                 style="@style/AppTheme.StandardButton"
                 android:text="@string/numeric2" />
 
             <Button
+                android:onClick="@{(view) -> activity.onKeyPadClick(view, '3')}"
+                android:enabled="@{!gameState.quiz.answered}"
                 style="@style/AppTheme.StandardButton"
                 android:text="@string/numeric3" />
         </LinearLayout>
@@ -40,14 +62,20 @@
         <LinearLayout style="@style/QuizKeyPadLayout">
 
             <Button
+                android:onClick="@{(view) -> activity.onKeyPadClick(view, '4')}"
+                android:enabled="@{!gameState.quiz.answered}"
                 style="@style/AppTheme.StandardButton"
                 android:text="@string/numeric4" />
 
             <Button
+                android:onClick="@{(view) -> activity.onKeyPadClick(view, '5')}"
+                android:enabled="@{!gameState.quiz.answered}"
                 style="@style/AppTheme.StandardButton"
                 android:text="@string/numeric5" />
 
             <Button
+                android:onClick="@{(view) -> activity.onKeyPadClick(view, '6')}"
+                android:enabled="@{!gameState.quiz.answered}"
                 style="@style/AppTheme.StandardButton"
                 android:text="@string/numeric6" />
         </LinearLayout>
@@ -55,14 +83,20 @@
         <LinearLayout style="@style/QuizKeyPadLayout">
 
             <Button
+                android:onClick="@{(view) -> activity.onKeyPadClick(view, '7')}"
+                android:enabled="@{!gameState.quiz.answered}"
                 style="@style/AppTheme.StandardButton"
                 android:text="@string/numeric7" />
 
             <Button
+                android:onClick="@{(view) -> activity.onKeyPadClick(view, '8')}"
+                android:enabled="@{!gameState.quiz.answered}"
                 style="@style/AppTheme.StandardButton"
                 android:text="@string/numeric8" />
 
             <Button
+                android:onClick="@{(view) -> activity.onKeyPadClick(view, '9')}"
+                android:enabled="@{!gameState.quiz.answered}"
                 style="@style/AppTheme.StandardButton"
                 android:text="@string/numeric9" />
 
@@ -71,14 +105,20 @@
         <LinearLayout style="@style/QuizKeyPadLayout">
 
             <Button
+                android:onClick="@{(view) -> activity.onKeyPadClick(view, '.')}"
+                android:enabled="@{!gameState.quiz.answered}"
                 style="@style/AppTheme.StandardButton"
                 android:text="@string/numeric_dot" />
 
             <Button
+                android:onClick="@{(view) -> activity.onKeyPadClick(view, '0')}"
+                android:enabled="@{!gameState.quiz.answered}"
                 style="@style/AppTheme.StandardButton"
                 android:text="@string/numeric0" />
 
             <Button
+                android:onClick="@{(view) -> activity.onKeyPadClick(view, '-')}"
+                android:enabled="@{!gameState.quiz.answered}"
                 style="@style/AppTheme.StandardButton"
                 android:text="@string/numeric_minus" />
 
@@ -87,18 +127,21 @@
         <LinearLayout style="@style/QuizKeyPadLayout">
 
             <Button
-                android:id="@+id/btn_generate"
+                android:onClick="@{(view) -> activity.onGenerateClick(view)}"
+                android:enabled="@{gameState.quiz.answered}"
                 style="@style/AppTheme.StandardButton.MediumTextSize"
                 android:text="@string/generate_btn" />
 
             <Button
-                android:id="@+id/btn_validate"
+                android:onClick="@{(view) -> activity.onValidateClick(view)}"
                 style="@style/AppTheme.StandardButton.MediumTextSize"
+                android:enabled='@{gameState.quiz.answer.length() != 0 &amp;&amp; !gameState.quiz.answered}'
                 android:text="@string/validate_btn" />
 
             <Button
-                android:id="@+id/btn_clear"
+                android:onClick="@{(view) -> activity.onClearClick(view)}"
                 style="@style/AppTheme.StandardButton.MediumTextSize"
+                android:enabled='@{gameState.quiz.answer.length() != 0 &amp;&amp; !gameState.quiz.answered}'
                 android:text="@string/clear_btn" />
 
         </LinearLayout>
@@ -106,10 +149,13 @@
         <LinearLayout style="@style/QuizKeyPadLayout">
 
             <Button
+                android:onClick="@{(view) -> activity.onScoreClick(view)}"
                 style="@style/AppTheme.StandardButton.AutoTextSize"
+                android:enabled="@{gameState.playerQuizCount != 0 &amp;&amp; gameState.quiz.answered}"
                 android:text="@string/score_btn" />
 
             <Button
+                android:onClick="@{(view) -> activity.onFinishClick(view)}"
                 android:id="@+id/btn_finish"
                 style="@style/AppTheme.StandardButton.AutoTextSize"
                 android:text="@string/finish_btn" />
