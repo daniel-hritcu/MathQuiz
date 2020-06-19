@@ -1,5 +1,6 @@
 package com.danielhritcu.mathquiz.ui;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -101,8 +102,22 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     public void onFinishClick(View view){
-        finish();
-        System.exit(0);
+        new AlertDialog.Builder(this)
+                .setTitle("Finish ?")
+                .setMessage("Are you sure you want to quit the quiz?")
+
+                // Specifying a listener allows you to take an action before dismissing the dialog.
+                // The dialog is automatically dismissed when a dialog button is clicked.
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                        System.exit(0);
+                    }
+                })
+
+                .setNegativeButton(android.R.string.no, null)
+                .setIcon(getDrawable(R.drawable.ic_baseline_close_24))
+                .show();
     }
 
     private void newQuiz(){
